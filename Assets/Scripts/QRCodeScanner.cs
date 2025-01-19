@@ -133,7 +133,7 @@ public class QRCodeScanner : MonoBehaviour
         }
     }
 
-    private IEnumerator FetchFilteredDestinations(string query)
+    IEnumerator FetchFilteredDestinations(string query)
     {
         UnityWebRequest request = UnityWebRequest.Get(apiUrl + "?search=" + UnityWebRequest.EscapeURL(query));
         yield return request.SendWebRequest();
@@ -182,7 +182,7 @@ public class QRCodeScanner : MonoBehaviour
         }
     }
 
-    private IEnumerator GetTargetPosition(string destination)
+    IEnumerator GetTargetPosition(string destination)
     {
         UnityWebRequest request = UnityWebRequest.Get(apiUrl + "?destination=" + UnityWebRequest.EscapeURL(destination));
         yield return request.SendWebRequest();
